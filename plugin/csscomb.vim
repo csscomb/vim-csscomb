@@ -16,7 +16,9 @@ function! g:CSScomb(count, line1, line2)
         echoerr split(systemOutput, "\n")[1]
     else
         let lines = readfile(tempFile)
-        call setline(a:line1, lines)
+        exec a:line1.",".a:line2."delete"
+        let a:line0 = a:line1-1
+        call append(a:line0, lines)
     endif
 endfunction
 
