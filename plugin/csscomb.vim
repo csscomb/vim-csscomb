@@ -11,7 +11,7 @@ function! g:CSScomb(count, line1, line2)
 
     let tempFile = tempname() . '.' . &filetype
     call writefile(content, tempFile)
-    let systemOutput = system('csscomb -c ~/.csscomb.json' . shellescape(tempFile))
+    let systemOutput = system('csscomb -c ~/.csscomb.json ' . shellescape(tempFile))
     if len(systemOutput)
         echoerr split(systemOutput, "\n")[1]
     else
