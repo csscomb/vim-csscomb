@@ -16,6 +16,10 @@ function! g:CSScomb(count, line1, line2)
         echoerr split(systemOutput, "\n")[1]
     else
         let lines = readfile(tempFile)
+        if len(lines)<a:line2
+            let dline = len(lines)+1
+            exec dline.','.a:line2.'d'
+        endif
         call setline(a:line1, lines)
     endif
 endfunction
