@@ -46,7 +46,7 @@ cp -r csscomb/plugin/* ~/.vim/plugin/
 ## Usage
 Vim command:
 ```
-:CSScomb
+:CSSComb
 ```
 
 ## Suggested Configuration
